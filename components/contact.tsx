@@ -49,8 +49,8 @@ export function Contact() {
           Get In Touch
         </h2>
         <p className="text-lg text-muted-foreground text-center mb-12">
-          Have a project in mind? Let's work together to bring your ideas to
-          life.
+          Have a project in mind? Let&apos;s work together to bring your ideas
+          to life.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -129,10 +129,10 @@ export function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="text-xl font-bold text-foreground mb-6">
-                Let's Connect
+                Let&apos;s Connect
               </h3>
               <p className="text-foreground leading-relaxed mb-6">
-                I'm always interested in hearing about new projects and
+                I&apos;m always interested in hearing about new projects and
                 opportunities. Whether you have a question or just want to say
                 hi, feel free to reach out!
               </p>

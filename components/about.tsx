@@ -1,16 +1,30 @@
 "use client";
 
+import { motion } from "motion/react";
+
 export function About() {
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-12">
+        <motion.h2
+          className="text-4xl sm:text-5xl font-bold text-foreground mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           About Me
-        </h2>
+        </motion.h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image placeholder */}
-          <div className="bg-secondary rounded-lg h-80 flex items-center justify-center border border-border">
+          <motion.div
+            className="bg-secondary rounded-lg h-80 flex items-center justify-center border border-border"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="text-center">
               <div className="text-6xl font-bold text-accent opacity-20">
                 Dev
@@ -19,26 +33,34 @@ export function About() {
                 Professional photo here
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Bio */}
-          <div className="space-y-6">
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <p className="text-lg text-foreground leading-relaxed">
-              I'm a passionate full-stack developer with 5+ years of experience
-              building web applications. I love solving complex problems and
-              creating intuitive user interfaces that make a real impact.
+              I&apos;m a passionate full-stack developer with 5+ years of
+              experience building web applications. I love solving complex
+              problems and creating intuitive user interfaces that make a real
+              impact.
             </p>
 
             <p className="text-lg text-foreground leading-relaxed">
               My journey in tech started with a curiosity about how things work,
-              and it's evolved into a career focused on crafting accessible,
-              performant, and beautiful digital experiences. I thrive in
-              collaborative environments and enjoy mentoring junior developers.
+              and it&apos;s evolved into a career focused on crafting
+              accessible, performant, and beautiful digital experiences. I
+              thrive in collaborative environments and enjoy mentoring junior
+              developers.
             </p>
 
             <p className="text-lg text-foreground leading-relaxed">
-              When I'm not coding, you'll find me contributing to open source
-              projects, writing technical blog posts, or exploring new
+              When I&apos;m not coding, you&apos;ll find me contributing to open
+              source projects, writing technical blog posts, or exploring new
               technologies and frameworks.
             </p>
 
@@ -67,7 +89,7 @@ export function About() {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

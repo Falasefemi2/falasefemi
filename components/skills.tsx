@@ -1,6 +1,7 @@
 "use client";
 
 import { Code2, Database, Palette, Server } from "lucide-react";
+import { motion } from "motion/react";
 
 const skillCategories = [
   {
@@ -26,19 +27,52 @@ const skillCategories = [
 ];
 
 export function Skills() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-12">
+        <motion.h2
+          className="text-4xl sm:text-5xl font-bold text-foreground mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Skills & Tools
-        </h2>
+        </motion.h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {skillCategories.map((category) => {
             const Icon = category.icon;
             return (
-              <div
+              <motion.div
                 key={category.category}
+                variants={itemVariants}
                 className="bg-background rounded-lg border border-border p-6 hover:border-accent transition-colors duration-300"
               >
                 <div className="flex items-center gap-3 mb-6">
@@ -63,17 +97,29 @@ export function Skills() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Additional skills highlight */}
-        <div className="mt-12 bg-background border border-border rounded-lg p-8">
+        <motion.div
+          className="mt-12 bg-background border border-border rounded-lg p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <h3 className="text-xl font-bold text-foreground mb-6">
             Other Expertise
           </h3>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <motion.div
+            className="grid sm:grid-cols-2 md:grid-cols-3 gap-4"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+          >
             {[
               "API Design",
               "Testing & QA",
@@ -82,15 +128,16 @@ export function Skills() {
               "Agile/Scrum",
               "UI/UX Principles",
             ].map((skill) => (
-              <div
+              <motion.div
                 key={skill}
+                variants={itemVariants}
                 className="px-4 py-3 bg-accent/10 border border-accent/30 rounded-lg text-center hover:border-accent transition-colors"
               >
                 <p className="text-foreground font-medium">{skill}</p>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
