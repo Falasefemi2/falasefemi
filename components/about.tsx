@@ -44,47 +44,62 @@ export function About() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <p className="text-lg text-foreground leading-relaxed">
-              I&apos;m a passionate full-stack developer with 5+ years of
-              experience building web applications. I love solving complex
-              problems and creating intuitive user interfaces that make a real
-              impact.
+              I’m a software engineer focused on building reliable backend
+              systems and scalable web applications. My work centers around
+              designing clean APIs, structuring maintainable architectures, and
+              solving real-world problems with thoughtful engineering decisions.
             </p>
 
             <p className="text-lg text-foreground leading-relaxed">
-              My journey in tech started with a curiosity about how things work,
-              and it&apos;s evolved into a career focused on crafting
-              accessible, performant, and beautiful digital experiences. I
-              thrive in collaborative environments and enjoy mentoring junior
-              developers.
+              I currently work with Java (Spring Boot) and Go for backend
+              development, while using Next.js and TypeScript to build
+              structured, production-ready interfaces. I care deeply about code
+              clarity, data modeling, and building systems that are easy to
+              extend and reason about.
             </p>
 
             <p className="text-lg text-foreground leading-relaxed">
-              When I&apos;m not coding, you&apos;ll find me contributing to open
-              source projects, writing technical blog posts, or exploring new
-              technologies and frameworks.
+              Beyond writing code, I spend time strengthening my understanding
+              of system design, database design, and performance trade-offs. I
+              aim to grow into a backend engineer who builds systems that are
+              not only functional, but scalable and resilient.
             </p>
 
             <div className="space-y-4 pt-4">
               <h3 className="text-xl font-semibold text-foreground">
                 Key Highlights
               </h3>
+
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <span className="text-accent font-bold mt-1">→</span>
+                  <span className="text-blue-600 font-bold mt-1">→</span>
                   <span className="text-foreground">
-                    Built and deployed 15+ production applications
+                    Designing and building role-based systems with structured
+                    workflows
                   </span>
                 </li>
+
                 <li className="flex items-start gap-3">
-                  <span className="text-accent font-bold mt-1">→</span>
+                  <span className="text-blue-600 font-bold mt-1">→</span>
                   <span className="text-foreground">
-                    Mentored 5+ junior developers
+                    Strong emphasis on API design, validation, and database
+                    integrity
                   </span>
                 </li>
+
                 <li className="flex items-start gap-3">
-                  <span className="text-accent font-bold mt-1">→</span>
+                  <span className="text-blue-600 font-bold mt-1">→</span>
                   <span className="text-foreground">
-                    Active contributor to open source
+                    Actively deepening expertise in Java, Go, and backend
+                    architecture
+                  </span>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold mt-1">→</span>
+                  <span className="text-foreground">
+                    Building full-stack applications with a backend-first
+                    engineering mindset
                   </span>
                 </li>
               </ul>

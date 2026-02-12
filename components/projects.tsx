@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 const projects = [
   {
@@ -130,72 +131,85 @@ export function Projects() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={itemVariants}
-              className="group relative bg-secondary rounded-lg border border-border overflow-hidden hover:border-accent transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
-            >
-              {/* Project image */}
-              <div className={`h-48 ${project.image} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
-              </div>
-
-              {/* Project content */}
-              <div className="p-6 space-y-4">
-                <h3 className="text-xl font-bold text-foreground group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-primary/20 text-xs font-medium text-accent rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="flex gap-2 pt-4 border-t border-border">
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex-1 hover:bg-accent hover:text-accent-foreground"
-                    asChild
+            <motion.div key={project.id} variants={itemVariants}>
+              <CardContainer className="inter-var h-full">
+                <CardBody className="group relative bg-secondary rounded-lg border border-border overflow-hidden h-full w-full p-0 dark:hover:shadow-2xl dark:hover:shadow-accent/[0.1]">
+                  {/* Project image */}
+                  <CardItem
+                    translateZ="60"
+                    className={`h-48 ${project.image} relative overflow-hidden w-full`}
                   >
-                    <a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
+                  </CardItem>
+
+                  {/* Project content */}
+                  <div className="p-6 space-y-4">
+                    <CardItem
+                      translateZ="50"
+                      className="text-xl font-bold text-foreground group-hover:text-accent transition-colors"
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Demo
-                    </a>
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className="flex-1 hover:bg-accent hover:text-accent-foreground"
-                    asChild
-                  >
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {project.title}
+                    </CardItem>
+
+                    <CardItem
+                      as="p"
+                      translateZ="40"
+                      className="text-sm text-muted-foreground leading-relaxed"
                     >
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </a>
-                  </Button>
-                </div>
-              </div>
+                      {project.description}
+                    </CardItem>
+
+                    {/* Tags */}
+                    <CardItem translateZ="30" className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 bg-primary/20 text-xs font-medium text-accent rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </CardItem>
+
+                    {/* Links */}
+                    <CardItem
+                      translateZ="20"
+                      className="flex gap-2 pt-4 border-t border-border w-full"
+                    >
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="flex-1 hover:bg-accent hover:text-accent-foreground"
+                        asChild
+                      >
+                        <a
+                          href={project.links.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Demo
+                        </a>
+                      </Button>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="flex-1 hover:bg-accent hover:text-accent-foreground"
+                        asChild
+                      >
+                        <a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="h-4 w-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
             </motion.div>
           ))}
         </motion.div>
