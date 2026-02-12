@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export function About() {
   return (
@@ -19,20 +20,19 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image placeholder */}
           <motion.div
-            className="bg-secondary rounded-lg h-80 flex items-center justify-center border border-border"
+            className=""
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <div className="text-center">
-              <div className="text-6xl font-bold text-accent opacity-20">
-                Dev
-              </div>
-              <p className="text-muted-foreground mt-4">
-                Professional photo here
-              </p>
-            </div>
+            <Image
+              src="/falasefemi.jpeg"
+              alt="Professional photo"
+              width={400}
+              height={320}
+              className="rounded-lg object-cover"
+            />
           </motion.div>
 
           {/* Bio */}
