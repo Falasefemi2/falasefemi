@@ -4,78 +4,67 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Image from "next/image";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "VendorHub",
     description:
-      "A full-stack e-commerce platform with real-time inventory, Stripe integration, and admin dashboard.",
-    image: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
-    tags: ["Next.js", "TypeScript", "Tailwind", "Stripe"],
+      "A commerce platform that helps WhatsApp vendors showcase products through shareable store links. Customers can browse products, select items, and are redirected directly to the vendor’s WhatsApp DM to complete purchases. Built with a Go backend and Next.js frontend.",
+    image: "/vendorhub.png",
+    tags: ["Next.js", "React", "Go", "PostgreSQL"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://vendorhub-v2-frontend.vercel.app/",
+      github: "https://github.com/Falasefemi2/vendorhub-v2-frontend",
     },
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "CompanyFlow",
     description:
-      "Collaborative task management tool with real-time updates, team sharing, and productivity analytics.",
-    image: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
-    tags: ["React", "Node.js", "MongoDB", "Socket.io"],
+      "An organizational management system that structures companies by departments, designations, and roles. Includes employee management, leave requests, and multi-level approval workflows. Built with Go for backend services and React for the frontend.",
+    image: "/companyflow.png",
+    tags: ["React", "Go", "PostgreSQL", "REST API"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://v0-companyflow-ui.vercel.app/",
+      github: "https://github.com/Falasefemi2/companyflow",
     },
   },
   {
     id: 3,
-    title: "AI Content Generator",
+    title: "AI Fitness Planner",
     description:
-      "AI-powered content generation tool with multiple templates, batch processing, and export options.",
-    image: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
-    tags: ["Next.js", "OpenAI", "React", "Tailwind"],
+      "An AI-powered fitness application that generates personalized workout plans based on user inputs such as gender and weight. Integrates Google AI to dynamically create exercise routines. Built with Next.js.",
+    image: "/ai-fitness.png",
+    tags: ["Next.js", "Google AI", "TypeScript"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://fitness-planner-v1.vercel.app/",
+      github: "https://github.com/Falasefemi2/fitness-planner-v1",
     },
   },
   {
     id: 4,
-    title: "Analytics Dashboard",
+    title: "Personal File Storage",
     description:
-      "Real-time analytics dashboard with customizable widgets, data visualization, and reporting features.",
-    image: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
-    tags: ["React", "D3.js", "Express", "PostgreSQL"],
+      "A secure file upload and storage application that allows users to upload and organize files and folders. Built with Next.js and Drizzle ORM for structured database interaction.",
+    image: "/file-upload image.png",
+    tags: ["Next.js", "Drizzle ORM", "PostgreSQL"],
     links: {
-      demo: "#",
-      github: "#",
+      demo: "https://file-storage-plum.vercel.app/",
+      github: "https://github.com/Falasefemi2/file-storage",
     },
   },
   {
     id: 5,
-    title: "SaaS Booking System",
+    title: "GameHive",
     description:
-      "Multi-vendor booking platform with calendar integration, payment processing, and customer reviews.",
-    image: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
-    tags: ["Next.js", "Prisma", "Tailwind", "Vercel"],
+      "A game discovery platform that fetches data from an external API, processes it, and stores selected records in a Neon PostgreSQL database for optimized querying and display.",
+    image: "/game-hive.png",
+    tags: ["Next.js", "External API", "Neon DB", "PostgreSQL"],
     links: {
-      demo: "#",
-      github: "#",
-    },
-  },
-  {
-    id: 6,
-    title: "Design System",
-    description:
-      "Comprehensive component library and design system documentation with Storybook integration.",
-    image: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
-    tags: ["React", "TypeScript", "Storybook", "CSS"],
-    links: {
-      demo: "#",
-      github: "#",
+      demo: "https://gamehive-sooty.vercel.app/",
+      github: "https://github.com/Falasefemi2/gamehive",
     },
   },
 ];
@@ -137,8 +126,14 @@ export function Projects() {
                   {/* Project image */}
                   <CardItem
                     translateZ="60"
-                    className={`h-48 ${project.image} relative overflow-hidden w-full`}
+                    className="relative h-48 w-full overflow-hidden"
                   >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300" />
                   </CardItem>
 
@@ -146,7 +141,7 @@ export function Projects() {
                   <div className="p-6 space-y-4">
                     <CardItem
                       translateZ="50"
-                      className="text-xl font-bold text-foreground group-hover:text-accent transition-colors"
+                      className="text-xl font-bold text-foreground transition-colors"
                     >
                       {project.title}
                     </CardItem>

@@ -11,7 +11,9 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-bold text-foreground mb-2">Dev</h3>
+            <h3 className="text-lg font-bold text-foreground mb-2">
+              Falase Femi
+            </h3>
             <p className="text-sm text-muted-foreground">
               Full-stack developer passionate about creating beautiful web
               experiences.
@@ -27,7 +29,7 @@ export function Footer() {
               <li>
                 <a
                   href="#about"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   About
                 </a>
@@ -35,7 +37,7 @@ export function Footer() {
               <li>
                 <a
                   href="#projects"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   Projects
                 </a>
@@ -43,7 +45,7 @@ export function Footer() {
               <li>
                 <a
                   href="#skills"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   Skills
                 </a>
@@ -51,7 +53,7 @@ export function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   Contact
                 </a>
@@ -67,30 +69,30 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Falasefemi2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   GitHub
                 </a>
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/falase-femi-91121b227/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   LinkedIn
                 </a>
               </li>
               <li>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/falase_femi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-accent transition-colors"
+                  className="text-muted-foreground transition-colors"
                 >
                   Twitter
                 </a>
@@ -102,7 +104,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="border-t border-border pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-            <p>&copy; {currentYear} Dev. All rights reserved.</p>
+            <p>&copy; {currentYear} Falase Femi. All rights reserved.</p>
             <p className="flex items-center gap-1">
               Made with <Heart className="h-4 w-4 text-accent" /> using Next.js
               & Tailwind CSS

@@ -32,45 +32,22 @@ export function Navigation() {
     }),
   };
 
-  const mobileMenuVariants = {
-    hidden: { opacity: 0, height: 0 },
-    visible: {
-      opacity: 1,
-      height: "auto",
-      transition: { duration: 0.3 },
-    },
-    exit: {
-      opacity: 0,
-      height: 0,
-      transition: { duration: 0.2 },
-    },
-  };
-
-  const mobileItemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: { delay: i * 0.05, duration: 0.3 },
-    }),
-  };
-
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div
-            className="flex-shrink-0"
+            className="shrink-0"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
             <a
               href="#"
-              className="text-2xl font-bold text-primary hover:text-accent transition-colors"
+              className="text-2xl font-bold text-primary transition-colors"
             >
-              Dev
+              Falase Femi
             </a>
           </motion.div>
 
@@ -86,7 +63,7 @@ export function Navigation() {
                 <motion.button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="text-foreground hover:text-accent transition-colors font-medium"
+                  className="text-foreground transition-colors font-medium"
                   custom={i}
                   variants={navItemVariants}
                   initial="hidden"
@@ -107,10 +84,12 @@ export function Navigation() {
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
+              className="overflow-visible"
             >
               <motion.div
-                animate={{ rotate: isOpen ? 90 : 0 }}
+                animate={{ rotate: 0 }}
                 transition={{ duration: 0.3 }}
+                className="overflow-visible"
               >
                 {isOpen ? (
                   <X className="h-6 w-6" />
@@ -126,21 +105,24 @@ export function Navigation() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="md:hidden pb-4 space-y-2"
-              variants={mobileMenuVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
+              className="md:hidden pb-4 space-y-2 overflow-hidden"
+              initial={{ opacity: 0, maxHeight: 0 }}
+              animate={{ opacity: 1, maxHeight: 500 }}
+              exit={{ opacity: 0, maxHeight: 0 }}
+              transition={{ duration: 0.3 }}
             >
               {navLinks.map((link, i) => (
                 <motion.button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors"
-                  custom={i}
-                  variants={mobileItemVariants}
-                  initial="hidden"
-                  animate="visible"
+                  className="block w-full text-left px-4 py-2 text-foreground hover:bg-secondary rounded-md transition-colors pointer-events-auto"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    transition: { delay: i * 0.05 },
+                  }}
+                  exit={{ opacity: 0, x: -20, transition: { duration: 0.2 } }}
                   whileHover={{ x: 4 }}
                 >
                   {link.label}
