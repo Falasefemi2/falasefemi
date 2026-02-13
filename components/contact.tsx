@@ -9,10 +9,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/Falasefemi2", label: "GitHub" },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/in/falase-femi-91121b227/",
+    label: "LinkedIn",
+  },
+  { icon: Twitter, href: "https://x.com/falase_femi", label: "Twitter" },
+  { icon: Mail, href: "mailto:femifalase228@gmail.com", label: "Email" },
 ];
 
 export function Contact() {
@@ -21,7 +25,10 @@ export function Contact() {
     email: "",
     message: "",
   });
+
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -33,13 +40,34 @@ export function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 3000);
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Something went wrong");
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -118,9 +146,14 @@ export function Contact() {
 
               <Button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
               >
-                {submitted ? "Message Sent! ✓" : "Send Message"}
+                {loading
+                  ? "Sending..."
+                  : submitted
+                    ? "Message Sent! ✓"
+                    : "Send Message"}
               </Button>
             </form>
           </div>
@@ -152,10 +185,10 @@ export function Contact() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-secondary border border-border rounded-lg hover:border-accent hover:bg-accent/10 transition-all duration-300"
+                      className="p-3 bg-secondary border border-border rounded-lg  transition-all duration-300"
                       aria-label={link.label}
                     >
-                      <Icon className="h-5 w-5 text-foreground hover:text-accent" />
+                      <Icon className="h-5 w-5 text-foreground" />
                     </a>
                   );
                 })}
@@ -167,7 +200,7 @@ export function Contact() {
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Email</p>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:femifalase228@gmail.com"
                   className="text-accent hover:underline font-medium"
                 >
                   hello@example.com
@@ -175,7 +208,7 @@ export function Contact() {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">Location</p>
-                <p className="text-foreground font-medium">San Francisco, CA</p>
+                <p className="text-foreground font-medium">Lagos, Nigeria</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground mb-1">

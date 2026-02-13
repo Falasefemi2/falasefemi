@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Developer Portfolio",
+  title: "Falase Femi Portfolio",
   description:
     "Full-stack developer specializing in Go, JavaScript, TypeScript, React, and Next.js",
 };
