@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
@@ -88,7 +89,7 @@ export function Hero() {
 
   return (
     <BackgroundBeamsWithCollision>
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center justify-center">
+      <section className="pt-20 sm:pt-24 md:pt-28 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden h-screen flex flex-col justify-center items-center">
         <div className="max-w-4xl mx-auto relative z-10 w-full">
           {/* Hero content */}
           <motion.div
@@ -99,7 +100,7 @@ export function Hero() {
           >
             <motion.div className="space-y-4" variants={itemVariants}>
               <motion.h1
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-black dark:text-white leading-tight tracking-tight"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black dark:text-white leading-tight tracking-tight break-words"
                 variants={itemVariants}
               >
                 Full-Stack{" "}
