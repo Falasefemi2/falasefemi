@@ -147,7 +147,7 @@ export function Contact() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
+                className="w-full"
               >
                 {loading
                   ? "Sending..."
@@ -201,9 +201,9 @@ export function Contact() {
                 <p className="text-sm text-muted-foreground mb-1">Email</p>
                 <a
                   href="mailto:femifalase228@gmail.com"
-                  className="text-accent hover:underline font-medium"
+                  className="text-primary hover:underline font-medium"
                 >
-                  hello@example.com
+                  femifalase228@gmail.com
                 </a>
               </div>
               <div>

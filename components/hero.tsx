@@ -64,7 +64,7 @@ export function Hero() {
     },
     {
       text: "Next.js.",
-      className: "text-blue-600 dark:texblue-600",
+      className: "text-primary",
     },
     {
       text: "Building",
@@ -83,7 +83,7 @@ export function Hero() {
     },
     {
       text: "love.",
-      className: "text-blue-600 dark:text-blue-600",
+      className: "text-primary",
     },
   ];
 
@@ -100,23 +100,15 @@ export function Hero() {
           >
             <motion.div className="space-y-4" variants={itemVariants}>
               <motion.h1
-                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-black dark:text-white leading-tight tracking-tight break-words"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-foreground leading-tight tracking-tight break-words"
                 variants={itemVariants}
               >
                 Full-Stack{" "}
-                <div className="relative mx-auto inline-block w-max filter-[drop-shadow(0px_1px_3px_rgba(27,37,80,0.14))]">
-                  <div className="absolute left-0 top-px bg-clip-text text-transparent bg-linear-to-r from-blue-800 to-blue-600 py-4">
-                    <span>Developer</span>
-                  </div>
-
-                  <div className="relative bg-clip-text text-transparent bg-linear-to-r from-blue-700 to-blue-500 py-4">
-                    <span>Developer</span>
-                  </div>
-                </div>
+                <span className="text-primary">Developer</span>
               </motion.h1>
 
               <motion.p
-                className="text-lg sm:text-xl md:text-2xl text-black/70 dark:text-white/70 font-light"
+                className="text-lg sm:text-xl md:text-2xl text-foreground/70 font-light"
                 variants={itemVariants}
               >
                 Crafting beautiful, performant web experiences with modern
@@ -136,9 +128,7 @@ export function Hero() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-blue-700 to-blue-500 
-             hover:from-blue-800 hover:to-blue-600 
-             text-white shadow-lg hover:shadow-xl transition-all duration-200"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-200"
                 onClick={() => handleScroll("#projects")}
               >
                 See My Work
@@ -147,7 +137,6 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-black/20 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 text-black dark:text-white"
                 onClick={() => handleScroll("#contact")}
               >
                 Get In Touch
@@ -162,7 +151,7 @@ export function Hero() {
             transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}
           >
             <svg
-              className="w-6 h-6 text-black dark:text-white"
+              className="w-6 h-6 text-foreground"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"
