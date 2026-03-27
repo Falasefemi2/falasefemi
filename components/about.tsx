@@ -72,7 +72,7 @@ export function About() {
 
               <ul className="space-y-2">
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">→</span>
+                  <span className="text-primary font-bold mt-1">→</span>
                   <span className="text-foreground">
                     Designing and building role-based systems with structured
                     workflows
@@ -80,7 +80,7 @@ export function About() {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">→</span>
+                  <span className="text-primary font-bold mt-1">→</span>
                   <span className="text-foreground">
                     Strong emphasis on API design, validation, and database
                     integrity
@@ -88,7 +88,7 @@ export function About() {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">→</span>
+                  <span className="text-primary font-bold mt-1">→</span>
                   <span className="text-foreground">
                     Actively deepening expertise in Java, Go, and backend
                     architecture
@@ -96,7 +96,7 @@ export function About() {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <span className="text-blue-600 font-bold mt-1">→</span>
+                  <span className="text-primary font-bold mt-1">→</span>
                   <span className="text-foreground">
                     Building full-stack applications with a backend-first
                     engineering mindset
